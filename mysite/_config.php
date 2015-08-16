@@ -12,4 +12,4 @@ require_once("conf/ConfigureFromEnv.php");
 
 //Security::setDefaultAdmin('admin','password');
 
-Director::forceSSL(array('/^registration/', '/^Security/','/^admin/'));
+//Director::forceSSL(array('/^registration/', '/^Security/','/^admin/'));
