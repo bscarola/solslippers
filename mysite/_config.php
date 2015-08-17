@@ -12,4 +12,5 @@ require_once("conf/ConfigureFromEnv.php");
 
 //Security::setDefaultAdmin('admin','password');
 
+//SSL disabled because Chrome does not like unsigned cert
 //Director::forceSSL(array('/^registration/', '/^Security/','/^admin/'));
