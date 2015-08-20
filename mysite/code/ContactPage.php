@@ -17,7 +17,7 @@ class ContactPage_Controller extends PageController {
         // Create fields
         $fields = new FieldList(
             new TextField('Name'),
-            new TextField('Event Type'),
+            new TextField('EventType')
         );
 
         $validator = new RequiredFields('Name');
