@@ -3,7 +3,7 @@ class ContactPage extends Page {
 
 }
 
-class ContactPage_Controller extends PageController {
+class ContactPage_Controller extends Page_Controller {
 
 	private static $allowed_actions = array (
         'BookingForm'
