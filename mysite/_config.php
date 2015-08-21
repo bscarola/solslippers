@@ -14,3 +14,7 @@ require_once("conf/ConfigureFromEnv.php");
 
 //SSL disabled because Chrome does not like unsigned cert
 //Director::forceSSL(array('/^registration/', '/^Security/','/^admin/'));
+
+SS_Log::add_writer(new SS_LogFileWriter('/home/scarola_gmail_com/logs/silverstripe/ss-notice.log'), SS_Log::NOTICE);
+SS_Log::add_writer(new SS_LogFileWriter('/home/scarola_gmail_com/logs/silverstripe/ss-error.log'), SS_Log::ERR);
+

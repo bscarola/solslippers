@@ -848,3 +848,11 @@ body h1 span.amp {
 	    display: none;
 	}
 }
+
+/* SS CUSTOM */
+
+.member-bio img {
+	width: 100%;
+	max-width: 300px;
+}
+
