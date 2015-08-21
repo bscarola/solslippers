@@ -17,25 +17,41 @@ class ContactPage_Controller extends Page_Controller {
         // Create fields
         $fields = new FieldList(
             new TextField('Name'),
-            new TextField('EventType')
+            new TextField('EmailAddress'),
+            new TextField('Phone'),
+            new TextField('EventType', 'Type of Event' ),
+            new TextField('EventDate'),
+            new TextField('EventLocation'),
+            new TextareaField('AdditionalDetails')
         );
 
-        $validator = new RequiredFields('Name');
+        $validator = new RequiredFields('Name', 'EmailAddress');
 
         // Create actions
         $actions = new FieldList(
             new FormAction('doBookingForm', 'Submit')
         );
 
-        return new Form($this, 'BookingForm', $fields, $actions);
+        return new Form($this, 'BookingForm', $fields, $actions, $validator );
     }
 
     public function doBookingForm($data, $form) {
-//        $submission = new BrowserPollSubmission();
-//        $form->saveInto($submission);
-//        $submission->write();
-        var_dump( $data );
+        $submission = new ContactSubmission();
+        $form->saveInto($submission);
+        $submission->write();
         return $this->redirectBack();
     }
 
+}
+
+class ContactSubmission extends DataObject {
+    private static $db = array(
+        'Name' => 'Varchar(256)',
+        'EmailAddress' => 'Varchar(256)',
+        'Phone' => 'Varchar(256)',
+        'EventType' => 'Varchar(256)',
+        'EventDate' => 'Varchar(256)',
+        'EventLocation' => 'Varchar(256)',
+        'AdditionalDetails' => 'text'
+    );
 }
